@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+    <title>Styling Vector Layer</title>
+
+    <link rel="stylesheet" href="/ol.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/styling.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .city {
+            display: none
+        }
+    </style>
+
+</head>
+
+<body id="body">
+
+
+
+    <button type="button" id="symbology" class="btn-primary" style="margin-left: 15px;">Create Style</button>
+
+    <div id="map" class="map"></div>
+    <div id="simbolize" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+            <header class="w3-container w3-blue">
+                <span onclick="document.getElementById('simbolize').style.display='none'"
+                    class="w3-button w3-blue w3-xlarge w3-display-topright">&times;</span>
+                <h2>Header</h2>
+            </header>
+
+            <div class="w3-bar w3-border-bottom">
+                <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'Fill')">Fill</button>
+                <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'Stroke')">Stroke</button>
+                <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'Text')">Text</button>
+            </div>
+
+            <div id="Fill" class="w3-container city">
+                <div class="form-group">
+                    <label for="fill-color">Fill Color</label>
+                    <input type="color" id="fill-color-pick"><br><br>
+                </div>
+            </div>
+
+            <div id="Stroke" class="w3-container city">
+                <div class="form-group">
+                    <label for="stroke-color">Stroke Color</label>
+                    <input type="color" id="stroke-color-pick" name="stroke-color">
+                    <hr>
+                    <label for="Line Cap">Line Cap</label>
+                    <select id="line-cap" name="Line Cap">
+                        <option value="butt">butt</option>
+                        <option value="round">round</option>
+                        <option value="square">square</option>
+                    </select>
+                    <hr>
+                    <label for="Line Join">Line Join</label>
+                    <select id="line-join" name="Line Cap">
+                        <option value="bevel">bevel</option>
+                        <option value="round">round</option>
+                        <option value="miter">miter</option>
+                    </select>
+                    <hr>
+                    <label for="line-dash">Line Dash</label>
+                    <input type="checkbox" id="line-dash" name="line-dash">
+                    <label for="line-dash-size" style="visibility:hidden">Line Dash Size</label>
+                    <input type="number" id="line-dash-size" name="line-dashsize" min="1" style="visibility:hidden">
+                    <hr>
+                    <label for="line-width">Line Width</label>
+                    <input type="number" id="line-width" name="line-width" min="0.1" step="0.1">
+                    <br><br>
+
+                </div>
+            </div>
+
+            <div id="Text" class="w3-container city">
+                <label for="font">Font</label>
+                <select id="font" name="font">
+                    <option value="Calibri,sans-serif">Calibri,sans-serif</option>
+                </select>
+                <hr>
+                <label for="font-size">Font Size</label>
+                <input type="number" id="font-size" name="font-size" min="2" step="2">
+                <hr>
+                <label for="fill-text-color">Text Fill Color</label>
+                <input type="color" id="fill-color-text">
+
+                <label for="stroke-text-color">Text Stroke Color</label>
+                <input type="color" id="stroke-color-text">
+                <hr>
+                <label for="textAlign">Text Align</label>
+                <select id="textAlign" name="font">
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                    <option value="center">Center</option>
+                </select>
+                <hr>
+
+            </div>
+
+            <div class="w3-container w3-light-grey w3-padding">
+                <button class="w3-button w3-right w3-white w3-border"
+                    onclick="document.getElementById('simbolize').style.display='none'">Close</button>
+                <button class="w3-button w3-right w3-white w3-border" id="create-symbology">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/jquery-3.6.0.js"></script>
+    <script src="/ol6.js"></script>
+    <script src="/Styling.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
